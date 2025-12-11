@@ -1,0 +1,34 @@
+{
+  "name": "screenshareapi",
+  "version": "1.0.0",
+  "description": "imagine compartilhar screenshots que podem ser vista por centenas de pessoas a partir de um codigo hash único e que tem data de expiração, apenas queles que contém o link podem acessá-la e se desintegra completamente dos registros apos algum periodo de tempo",
+  "keywords": [
+    "screenshot",
+    "share"
+  ],
+  "homepage": "https://github.com/EduardoSantos2231/screenshotshareapi#readme",
+  "bugs": {
+    "url": "https://github.com/EduardoSantos2231/screenshotshareapi/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EduardoSantos2231/screenshotshareapi.git"
+  },
+  "license": "ISC",
+  "author": "Eduardo",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^5.2.1"
+  }
+}
