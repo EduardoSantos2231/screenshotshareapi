@@ -19,9 +19,9 @@ uploadsRouter.post(
     res.status(201).json({
       message: "Upload realizado com sucesso!",
       file: {
-        filename, // O nome hash gerado (ex: a1b2...png)
-        path, // O caminho no seu PC
-        size, // Tamanho em bytes
+        filename,
+        path,
+        size,
       },
     });
   },
