@@ -12,16 +12,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EduardoSantos2231/screenshotshareapi.git"
+    "url": "https://github.com/EduardoSantos2231/screenshotshareapi.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "Eduardo",
   "type": "module",
-  "main": "server.js",
+  "main": "./dist/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch ./src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.0.0",
     "@types/node": "^25.0.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
@@ -29,6 +36,8 @@
   "dependencies": {
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
-    "express": "^5.2.1"
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "multer": "^2.0.2"
   }
 }
