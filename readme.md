@@ -1,4 +1,4 @@
----
+
 # 📸 ScreenshareAPI
 
 > Uma API eficiente para compartilhamento temporário de screenshots. Upload rápido, link único e autodestruição em 24 horas.
