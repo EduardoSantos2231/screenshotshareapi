@@ -1,5 +1,5 @@
 import { client } from "../configs/redisConfigs.js";
-import { supabaseClient } from "../configs/supabase.js"; // Importe o cliente
+import { supabaseClient } from "../configs/supabase.js";
 import crypto from "node:crypto";
 
 type FileData = Express.Multer.File;
@@ -16,6 +16,7 @@ export const createUploadService = async (file: FileData) => {
       contentType: file.mimetype,
     });
 
+  console.info(file);
   if (error) {
     throw new Error(`Erro no upload Supabase: ${error.message}`);
   }
