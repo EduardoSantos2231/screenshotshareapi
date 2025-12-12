@@ -72,7 +72,7 @@ Abaixo estão as rotas disponíveis na aplicação.
 
 Envia uma screenshot para o servidor e retorna um link de compartilhamento temporário.
 
-- **URL:** `/uploads` (Sugestão de prefixo)
+- **URL:** `/uploads`
 - **Método:** `POST`
 - **Body (Multipart/form-data):**
   - `file`: (Arquivo de imagem: .png, .jpg, .jpeg, .gif)
