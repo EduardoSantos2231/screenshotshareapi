@@ -4,6 +4,8 @@ const app = express();
 import cors from "cors";
 import { uploadsRouter } from "./routes/uploads.routes.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
+import "./configs/redisConfigs.js";
+import { cleanupJob } from "./jobs/cronDeleteExpItem.js";
 
 const port = process.env.PORT || 5000;
 const apiUrl = process.env.APP_API_URL;
@@ -22,10 +24,13 @@ app.get("/", (_, res) => {
   return res.json(process.env.NODE_ENV);
 });
 
-app.use("/upload", uploadsRouter);
+app.use("/uploads", uploadsRouter);
 app.use(errorHandler);
 
 app.listen(3000, () => {
-  console.log(`O servidor está rodando na porta: ${port}`);
-  console.log(`Link do servidor: ${apiUrl}`);
+  console.log("---------------");
+
+  console.info(`O servidor está rodando na porta: ${port}`);
+  console.info(`Link do servidor: ${apiUrl}`);
+  cleanupJob();
 });
