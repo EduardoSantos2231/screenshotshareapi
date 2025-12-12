@@ -7,7 +7,12 @@ export const multerConfig: Options = {
     fileSize: 1024 * 1024 * 5, //5mb,
   },
   fileFilter: (_, file, callback) => {
-    const allowedMimeTypes = ["image/jpeg", "image/png", "image/gif"];
+    const allowedMimeTypes = [
+      "image/jpeg",
+      "image/png",
+      "image/gif",
+      "image/jpg",
+    ];
     if (allowedMimeTypes.includes(file.mimetype)) return callback(null, true);
     return callback(new Error("Formato de imagem não permitido"));
   },
