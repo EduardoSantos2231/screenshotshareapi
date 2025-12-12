@@ -14,10 +14,7 @@ uploadsRouter.post(
   "/",
   upload.single("image"),
   async (req: Request, res: Response) => {
-    if (!req.file) {
-      res.status(400).json({ error: "Nenhum arquivo enviado." });
-      return;
-    }
+    if (!req.file) return;
     const result = await createUploadService(req.file);
     return res.status(201).json(result);
   },

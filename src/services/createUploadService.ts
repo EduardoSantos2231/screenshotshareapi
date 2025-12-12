@@ -18,7 +18,7 @@ export const createUploadService = async (file: FileData) => {
 
   console.info(file);
   if (error) {
-    throw new Error(`Erro no upload Supabase: ${error.message}`);
+    throw new Error(`Error: upload Supabase: ${error.message}`);
   }
 
   const { data: publicUrlData } = supabaseClient.storage

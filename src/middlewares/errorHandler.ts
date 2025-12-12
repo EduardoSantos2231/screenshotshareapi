@@ -1,6 +1,7 @@
 import type { Request, Response, NextFunction } from "express";
 import { AppError } from "../utils/AppError.js";
 import { ZodError } from "zod";
+import { MulterError } from "multer";
 
 export const errorHandler = (
   error: Error,
@@ -14,7 +15,12 @@ export const errorHandler = (
   if (error instanceof ZodError) {
     return res.status(400).json({ message: "validation error" });
   }
+  if (error instanceof MulterError) {
+    return res.status(400).json({
+      message: error.message,
+    });
+  }
   console.error(error);
 
-  return res.status(500).json({ message: "Erro interno do servidor" });
+  return res.status(500).json({ message: "Internal server error" });
 };
