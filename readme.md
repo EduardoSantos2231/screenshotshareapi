@@ -1,5 +1,31 @@
 # ScreenshareAPI
 
+.
+├── env.example
+├── fluxo_api_screenshot_share.excalidraw
+├── LICENSE
+├── package.json
+├── package-lock.json
+├── readme.md
+├── src
+│   ├── configs
+│   │   ├── redisConfigs.ts
+│   │   ├── supabase.ts
+│   │   └── uploadConfigs.ts
+│   ├── jobs
+│   │   └── cronDeleteExpItem.ts
+│   ├── middlewares
+│   │   └── errorHandler.ts
+│   ├── routes
+│   │   └── uploads.routes.ts
+│   ├── server.ts
+│   ├── services
+│   │   ├── createUploadService.ts
+│   │   └── getUploadService.ts
+│   └── utils
+│   └── AppError.ts
+└── tsconfig.json
+
 ### Tecnologias
 
 - zod
