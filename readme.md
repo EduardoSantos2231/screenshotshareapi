@@ -11,7 +11,7 @@
 
 A **ScreenshareAPI** resolve o problema de acumular prints e imagens desnecessárias em conversas. A ideia é simples: você faz o upload, recebe um link curto e seguro, e a imagem desaparece automaticamente após 24 horas.
 
-Este projeto foi desenvolvido com foco em performance e boas práticas de Backend, utilizando **Redis** para gerenciamento de acesso rápido e expiração (TTL) e **Supabase** para armazenamento robusto de objetos.
+Este projeto foi desenvolvido com foco em performance e boas práticas de Backend, utilizando **Redis** para gerenciamento de acesso rápido e expiração (TTL) e **Supabase** para armazenamento das imagens.
 
 ### 🧠 Fluxo da Aplicação
 
