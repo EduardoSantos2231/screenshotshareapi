@@ -1,6 +1,6 @@
 # ScreenshareAPI
 
-.
+```
 ├── env.example
 ├── fluxo_api_screenshot_share.excalidraw
 ├── LICENSE
@@ -20,12 +20,12 @@
 │   │   └── uploads.routes.ts
 │   ├── server.ts
 │   ├── services
-│   │   ├── createUploadService.ts
+│   │   ├── createUploadService.ts
 │   │   └── getUploadService.ts
 │   └── utils
-│   └── AppError.ts
+│       └── AppError.ts
 └── tsconfig.json
-
+```
 ### Tecnologias
 
 - zod
