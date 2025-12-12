@@ -12,6 +12,7 @@ export const multerConfig: Options = {
       "image/png",
       "image/gif",
       "image/jpg",
+      "image/webp",
     ];
     if (allowedMimeTypes.includes(file.mimetype)) return callback(null, true);
     return callback(new Error("Formato de imagem não permitido"));

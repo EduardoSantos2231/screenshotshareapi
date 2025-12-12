@@ -1,19 +1,24 @@
 import { client } from "../configs/redisConfigs.js";
 import { supabaseClient } from "../configs/supabase.js";
 import crypto from "node:crypto";
+import sharp from "sharp";
 
 type FileData = Express.Multer.File;
 
 export const createUploadService = async (file: FileData) => {
   const publicId = crypto.randomBytes(4).toString("hex");
 
-  const fileExtension = file.originalname.split(".").pop();
-  const fileNameInBucket = `${publicId}-${Date.now()}.${fileExtension}`;
+  const fileNameInBucket = `${publicId}-${Date.now()}.webp`;
+
+  const optimizedBuffer = await sharp(file.buffer)
+    .resize(1920)
+    .webp({ quality: 80 })
+    .toBuffer();
 
   const { data, error } = await supabaseClient.storage
     .from(process.env.SUPABASE_BUCKET || "images")
-    .upload(fileNameInBucket, file.buffer, {
-      contentType: file.mimetype,
+    .upload(fileNameInBucket, optimizedBuffer, {
+      contentType: "image/webp",
     });
 
   console.info(file);
