@@ -12,7 +12,7 @@ const apiUrl = process.env.APP_API_URL;
 
 app.use(
   cors({
-    origin: ["*"],
+    origin: "*",
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
   }),
